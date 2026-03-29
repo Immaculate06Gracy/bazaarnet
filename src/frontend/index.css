@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* BazaarNet - Deep Blue Commerce Theme */
+    --background: 1 0 0;
+    --foreground: 0.18 0.04 264;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 264;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 264;
+
+    /* Deep blue #0A3D91 */
+    --primary: 0.32 0.17 264;
+    --primary-foreground: 1 0 0;
+
+    --secondary: 0.95 0.02 264;
+    --secondary-foreground: 0.32 0.17 264;
+
+    --muted: 0.96 0.01 264;
+    --muted-foreground: 0.50 0.06 264;
+
+    --accent: 0.92 0.05 264;
+    --accent-foreground: 0.25 0.15 264;
+
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.90 0.03 264;
+    --input: 0.90 0.03 264;
+    --ring: 0.32 0.17 264;
+
+    --radius: 0.75rem;
+
+    --chart-1: 0.32 0.17 264;
+    --chart-2: 0.55 0.14 264;
+    --chart-3: 0.65 0.12 200;
+    --chart-4: 0.65 0.18 160;
+    --chart-5: 0.65 0.20 50;
+
+    --sidebar: 0.32 0.17 264;
+    --sidebar-foreground: 1 0 0;
+    --sidebar-primary: 0.75 0.10 264;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.22 0.13 264;
+    --sidebar-accent-foreground: 1 0 0;
+    --sidebar-border: 0.28 0.12 264;
+    --sidebar-ring: 0.55 0.14 264;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bazaar-gradient {
+    background: linear-gradient(135deg, oklch(0.32 0.17 264) 0%, oklch(0.22 0.13 264) 50%, oklch(0.18 0.10 264) 100%);
+  }
+  .bazaar-card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  .splash-ring {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.4s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.1s; opacity: 0; }
+.stagger-2 { animation-delay: 0.2s; opacity: 0; }
+.stagger-3 { animation-delay: 0.3s; opacity: 0; }
+.stagger-4 { animation-delay: 0.4s; opacity: 0; }
+.stagger-5 { animation-delay: 0.5s; opacity: 0; }
